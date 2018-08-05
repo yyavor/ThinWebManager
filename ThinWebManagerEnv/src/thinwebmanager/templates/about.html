@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>About page</h1>
+<p>This is template</p>
+
+<p>
+    {{ my_text|capfirst|upper }}, {{ my_number }}
+</p>
+
+{{ my_html|safe }}
+
+<ul>
+{% for my_sub_item in my_list %}
+    {% if my_sub_item == 1%}
+        <li>{{forloop.counter}}-{{my_sub_item|add:22}}</li>
+    {% elif my_sub_item == 8%}
+        <li>It would be 8</li>
+    {% else %}
+        <li>{{forloop.counter}}-{{my_sub_item}}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}
+
