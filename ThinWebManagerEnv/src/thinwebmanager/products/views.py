@@ -7,5 +7,5 @@ def product_detail_view(request):
     context = {
         "prod": prod
     }
-    return render(request, "product/detail.html", context)
+    return render(request, "products/detail.html", context)
 
