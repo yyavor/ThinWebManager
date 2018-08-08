@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 from .forms import ProductForm, RawProductForm
 
@@ -53,7 +53,8 @@ def product_detail_view(request):
 
 
 def dynamic_detail_view(request, prod_id):
-    prod = Product.objects.get(id=prod_id)
+    #prod = Product.objects.get(id=prod_id)
+    prod = get_object_or_404(Product, id=prod_id)
     context = {
         "prod": prod
     }
