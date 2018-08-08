@@ -51,3 +51,11 @@ def product_detail_view(request):
     }
     return render(request, "products/product_detail.html", context)
 
+
+def dynamic_detail_view(request, prod_id):
+    prod = Product.objects.get(id=prod_id)
+    context = {
+        "prod": prod
+    }
+    return render(request, "products/product_detail.html", context)
+
