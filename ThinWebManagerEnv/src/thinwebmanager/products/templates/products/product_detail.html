@@ -1,8 +1,8 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<h1>{{prod.title}}</h1>
-<p>{% if prod.description is not None and prod.description != ''%}{{prod.description}}{%else%}Description comming soon{%endif%}</p>
+<h1>{{product.title}}</h1>
+<p>{% if product.description is not None and product.description != ''%}{{product.description}}{%else%}Description comming soon{%endif%}</p>
 
-{{prod.price}}
+{{product.price}}
 {% endblock %}

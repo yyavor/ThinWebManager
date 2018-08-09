@@ -10,4 +10,4 @@ class Product(models.Model):
     featured = models.BooleanField(default=True)
 
     def get_absolute_url(self):
-        return reverse("product", kwargs={"prod_id": self.id})#f"/product/{self.id}"
+        return reverse("products:product-detail", kwargs={"product_id": self.id})

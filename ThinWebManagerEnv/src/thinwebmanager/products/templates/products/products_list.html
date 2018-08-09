@@ -4,10 +4,7 @@
 {{products}}
 
 {% for product in products%}
-    <a href={{product.get_absolute_url}}>{{product.id}}
-    {{product.title}} |
-    {{product.description}} |
-        {{product.price}}</a>
+    <a href={{product.get_absolute_url}}>{{product.id}} - {{product.title}}</a>
 <p></p>
 <p></p>
 {% endfor %}
