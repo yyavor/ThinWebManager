@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
 from .forms import ProductForm, RawProductForm
 
@@ -59,4 +59,23 @@ def dynamic_detail_view(request, prod_id):
         "prod": prod
     }
     return render(request, "products/product_detail.html", context)
+
+
+def product_delete_view(request, prod_id):
+    prod = get_object_or_404(Product, id=prod_id)
+    if request.method == "POST":
+        prod.delete()
+        return redirect("../")
+    context = {
+        "prod": prod
+    }
+    return render(request, "products/product_delete.html", context)
+
+
+def products_list_view(request):
+    query_set = Product.objects.all()
+    context = {
+        "products": query_set
+    }
+    return render(request, "products/products_list.html", context)
 
