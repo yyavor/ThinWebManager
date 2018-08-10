@@ -25,7 +25,7 @@ SECRET_KEY = 'oy6jsjbdaesp9xb5&*v9nc^urq44b-kp_9+)^^7dwwqm=i412c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'products',
     'pages',
-    'blog'
+    'blog',
+    'channels',
+    'chat'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'thinwebmanager.urls'
+ASGI_APPLICATION = "thinwebmanager.routing.application"
 
 TEMPLATES = [
     {
@@ -70,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'thinwebmanager.wsgi.application'
+WSGI_APPLICATION = 'thinwebmanager.wsgi.application' 
 
 
 # Database
